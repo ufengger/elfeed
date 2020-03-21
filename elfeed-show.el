@@ -37,7 +37,7 @@
                  (function-item pop-to-buffer)
                  function))
 
-(defcustom elfeed-show-entry-delete #'elfeed-kill-buffer
+(defcustom elfeed-show-entry-delete #'elfeed
   "Function called when quitting from the elfeed-entry buffer.
 Called without arguments."
   :group 'elfeed
