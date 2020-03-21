@@ -62,6 +62,7 @@ Called without arguments."
       (define-key map "b" #'elfeed-show-visit)
       (define-key map "y" #'elfeed-show-yank)
       (define-key map "u" #'elfeed-show-tag--unread)
+      (define-key map "i" #'elfeed-show-tag--important)
       (define-key map "+" #'elfeed-show-tag)
       (define-key map "-" #'elfeed-show-untag)
       (define-key map "<" #'beginning-of-buffer)
@@ -91,6 +92,10 @@ Called without arguments."
   (set (make-local-variable 'bookmark-make-record-function)
        #'elfeed-show-bookmark-make-record)
   (run-mode-hooks 'elfeed-show-mode-hook))
+
+(defalias 'elfeed-show-tag--important
+  (elfeed-expose #'elfeed-show-tag 'important)
+  "Mark the current entry important.")
 
 (defalias 'elfeed-show-tag--unread
   (elfeed-expose #'elfeed-show-tag 'unread)
