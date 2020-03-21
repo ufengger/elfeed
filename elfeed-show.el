@@ -63,6 +63,7 @@ Called without arguments."
       (define-key map "y" #'elfeed-show-yank)
       (define-key map "u" #'elfeed-show-tag--unread)
       (define-key map "i" #'elfeed-show-tag--important)
+      (define-key map "I" #'elfeed-show-untag--important)
       (define-key map "+" #'elfeed-show-tag)
       (define-key map "-" #'elfeed-show-untag)
       (define-key map "<" #'beginning-of-buffer)
@@ -96,6 +97,10 @@ Called without arguments."
 (defalias 'elfeed-show-tag--important
   (elfeed-expose #'elfeed-show-tag 'important)
   "Mark the current entry important.")
+
+(defalias 'elfeed-show-untag--important
+  (elfeed-expose #'elfeed-show-untag 'important)
+  "Remove the important tag from the current entry.")
 
 (defalias 'elfeed-show-tag--unread
   (elfeed-expose #'elfeed-show-tag 'unread)
