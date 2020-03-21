@@ -97,6 +97,10 @@ When live editing the filter, it is bound to :live.")
 (defvar elfeed-search-print-entry-function #'elfeed-search-print-entry--default
   "Function to print entries into the *elfeed-search* buffer.")
 
+(defalias 'elfeed-search-tag-all-important
+  (elfeed-expose #'elfeed-search-tag-all 'important)
+  "Add the `important' tag to all selected entries.")
+
 (defalias 'elfeed-search-tag-all-unread
   (elfeed-expose #'elfeed-search-tag-all 'unread)
   "Add the `unread' tag to all selected entries.")
@@ -142,6 +146,7 @@ When live editing the filter, it is bound to :live.")
       (define-key map "y" #'elfeed-search-yank)
       (define-key map "u" #'elfeed-search-tag-all-unread)
       (define-key map "r" #'elfeed-search-untag-all-unread)
+      (define-key map "i" #'elfeed-search-tag-all-important)
       (define-key map "n" #'next-line)
       (define-key map "p" #'previous-line)
       (define-key map "+" #'elfeed-search-tag-all)
