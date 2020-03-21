@@ -54,7 +54,7 @@ Called without arguments."
       (suppress-keymap map)
       (define-key map "h" #'describe-mode)
       (define-key map "d" #'elfeed-show-save-enclosure)
-      (define-key map "q" #'elfeed-kill-buffer)
+      (define-key map "q" #'elfeed)
       (define-key map "g" #'elfeed-show-refresh)
       (define-key map "n" #'elfeed-show-next)
       (define-key map "p" #'elfeed-show-prev)
