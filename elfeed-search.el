@@ -121,6 +121,7 @@ When live editing the filter, it is bound to :live.")
   "Save the database, then `quit-window'."
   (interactive)
   (elfeed-db-save)
+  (elfeed-db-compact)
   (quit-window))
 
 (defun elfeed-search-last-entry ()
